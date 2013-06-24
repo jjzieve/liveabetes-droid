@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Liveabetes</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_blood_glucose">Blood Glucose</string>
+    <string name="title_activity_blood_pressure">Blood Pressure</string>
+    <string name="title_activity_graph">Graph</string>
+    <string name="title_activity_insulin">Insulin</string>
+    <string name="title_activity_weight">Weight</string>
+    <string name="title_activity_settings">Settings</string>
+
+</resources>

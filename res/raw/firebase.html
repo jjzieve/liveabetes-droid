@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+  </head>
+  <body>
+    <script type='text/javascript'>
+
+    var bases = {};
+    var methods = {};
+
+    function getBase(endpoint) {
+      var base = bases[endpoint];
+      if (base == null) {
+        bases[endpoint] = new Firebase(endpoint);
+        base = bases[endpoint];
+      }
+      return base;
+    }
+
+    function onFirebase(endpoint, ev, methodId) {
+      
+      var parent = getBase(endpoint);
+      
+      on(parent, endpoint, ev, methodId);
+    }
+
+    function on(parent, endpoint, ev, methodId) {
+      
+      var m = function (snapshot, prevChildName) {
+        var name = snapshot.name();
+        var val = snapshot.val();
+        var pri = snapshot.getPriority();
+        var json = JSON.stringify(val);
+        Android.onEvent(snapshot.ref().toString(), methodId, json, pri, prevChildName);
+      };
+      methods[methodId] = m;
+      
+      parent.on(ev, m);
+    }
+
+    function offFirebase(endpoint, ev, methodId) {
+      
+      var parent = getBase(endpoint);
+      
+      off(parent, endpoint, ev, methodId);
+    }
+
+    function off(parent, endpoint, ev, methodId) {
+      
+      if (ev === undefined) {
+        parent.off();
+      } else if (methodId === undefined) {
+        parent.off(ev);
+      } else {
+        var m = methods[methodId];
+        if (m == null) {
+          return;
+        }
+        
+        parent.off(ev, m);
+        
+        delete methods[methodId];
+      }
+    }
+
+    function set(endpoint, obj, methodId) {
+      var parent = getBase(endpoint);
+      
+      if (methodId === undefined) {
+        parent.set(obj);
+      } else {
+        parent.set(obj, function (success) {
+          Android.synchronizedToServer(methodId, success);
+        });
+      }
+    }
+
+    function setWithPriority(endpoint, obj, priority, methodId) {
+      var parent = getBase(endpoint);
+      
+      if (methodId === undefined) {
+        parent.setWithPriority(obj, priority);
+      } else {
+        parent.setWithPriority(obj, priority, function (success) {
+          Android.synchronizedToServer(methodId, success);
+        });
+      }
+    }
+
+    function setPriority(endpoint, priority, methodId) {
+      var parent = getBase(endpoint);
+      
+      if (methodId === undefined) {
+        parent.setPriority(priority);
+      } else {
+        parent.setPriority(priority, function (success) {
+          Android.synchronizedToServer(methodId, success);
+        });
+      }
+    }
+
+    function push(endpoint, obj, methodId) {
+      var parent = getBase(endpoint);
+      
+      if(obj === undefined) {
+        var pushed = parent.push();
+      } else if (methodId === undefined) {
+        var pushed = parent.push(obj);
+      } else {
+        var pushed = parent.push(obj, function (success) {
+            Android.synchronizedToServer(methodId, success);
+          });
+      }
+      
+      var name = pushed.name();
+      var fullName = parent.toString() + '/' + name;
+      bases[fullName] = pushed;
+      Android.pushed(name);
+    }
+
+    function transaction(endpoint, methodId) {
+      getBase(endpoint).transaction(
+        function (currentData) {
+        var json = JSON.stringify(currentData);
+        return Android.callTransactionMethod(endpoint, methodId, json);
+      },
+        function (success, snapshot, reason) {
+        var val = snapshot.val();
+        var json = JSON.stringify(val);
+        Android.transactionComplete(endpoint, methodId, success, json, reason);
+      });
+    }
+
+    function setOnDisconnect(endpoint, obj) {
+      getBase(endpoint).setOnDisconnect(obj);
+    }
+
+    function removeOnDisconnect(endpoint) {
+      getBase(endpoint).removeOnDisconnect();
+    }
+
+    function update(endpoint, obj, methodId) {
+      var parent = getBase(endpoint);
+      
+      if (methodId === undefined) {
+        parent.update(obj);
+      } else {
+        parent.update(obj, function (success) {
+          Android.synchronizedToServer(methodId, success);
+        });
+      }
+    }
+
+    function remove(endpoint, methodId) {
+      var parent = getBase(endpoint);
+      
+      if (methodId === undefined) {
+        parent.remove();
+      } else {
+        parent.remove(function (success) {
+          Android.synchronizedToServer(methodId, success);
+        });
+      }
+      
+      delete bases[endpoint];
+    }
+
+    function onQuery(endpoint, ev, methodId, limit, startSpecified, startPri, startName, endSpecified, endPri, endName) {
+      
+      var base = getQuery(endpoint, limit, startSpecified, startPri, startName, endSpecified, endPri, endName);
+      
+      if (base != null) {
+        on(base, endpoint, ev, methodId);
+      }
+    }
+
+    function offQuery(endpoint, ev, methodId, limit, startSpecified, startPri, startName, endSpecified, endPri, endName) {
+      
+      var base = getQuery(endpoint, limit, startSpecified, startPri, startName, endSpecified, endPri, endName);
+      
+      if (base != null) {
+        off(base, endpoint, ev, methodId);
+      }
+    }
+
+    function getQuery(endpoint, limit, startSpecified, startPri, startName, endSpecified, endPri, endName) {
+      
+      try {
+        var base = getBase(endpoint);
+        
+        if (limit != undefined) {
+          base = base.limit(limit);
+        }
+        
+        if (startSpecified) {
+          if (startPri == undefined) {
+            base = base.startAt();
+          } else {
+            if (startName == undefined) {
+              base = base.startAt(startPri);
+            } else {
+              base = base.startAt(startPri, startName);
+            }
+          }
+        }
+        
+        if (endSpecified) {
+          if (endPri == undefined) {
+            base = base.endAt();
+          } else {
+            if (endName == undefined) {
+              base = base.endAt(endPri);
+            } else {
+              base = base.endAt(endPri, endName);
+            }
+          }
+        }
+        
+        return base;
+        
+      } catch (ex) {
+        // There is a problem with the number of queries
+        return null;
+      }
+    }
+    
+    </script>
+  </body>
+</html>
