@@ -59,21 +59,21 @@ public class GraphActivity extends Activity {
 		LineAndPointFormatter series1Format = new LineAndPointFormatter(
 				Color.rgb(0, 200, 0),                   // line color
 				Color.rgb(0, 100, 0),                   // point color
-				null);                                  // fill color (none)
+				null,(PointLabelFormatter) null);                                  // fill color (none)
 
 		// add a new series' to the xyplot:
 		mySimpleXYPlot.addSeries(series1, series1Format);
 
 		// same as above:
 		mySimpleXYPlot.addSeries(series2,
-				new LineAndPointFormatter(Color.rgb(0, 0, 200), Color.rgb(0, 0, 100), null));
+				new LineAndPointFormatter(Color.rgb(0, 0, 200), Color.rgb(0, 0, 100), null, (PointLabelFormatter) null));
 
 		// reduce the number of range labels
 		mySimpleXYPlot.setTicksPerRangeLabel(3);
 
 		// by default, AndroidPlot displays developer guides to aid in laying out your plot.
 		// To get rid of them call disableAllMarkup():
-		mySimpleXYPlot.disableAllMarkup();
+		//mySimpleXYPlot.disableAllMarkup();//Deprecated not needed anymore
 	}
 
 	/**

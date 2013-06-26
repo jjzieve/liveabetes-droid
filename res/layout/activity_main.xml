@@ -23,7 +23,8 @@
                 android:id="@+id/imageView1"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:src="@drawable/bg_button"
+                android:src="@drawable/bg_button2"
+                android:background="@drawable/bg_blue"
                 android:onClick="bloodGlucose" />
 
             <ImageView
