@@ -23,7 +23,7 @@
                 android:id="@+id/imageView1"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:src="@drawable/bg_button2"
+                android:src="@drawable/bg_button"
                 android:background="@drawable/bg_blue"
                 android:onClick="bloodGlucose" />
 
@@ -32,6 +32,7 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:src="@drawable/bp_button"
+                android:background="@drawable/bp_green"
                 android:onClick="bloodPressure" />
 
         </TableRow>
@@ -53,6 +54,7 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:src="@drawable/insulin_button"
+                android:background="@drawable/ins_orange"
                 android:onClick="insulin" />
 
         </TableRow>
@@ -67,6 +69,7 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:src="@drawable/weight_button"
+                android:background="@drawable/wt_yellow_green"
                 android:onClick="weight" />
 
             <ImageView
