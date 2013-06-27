@@ -10,5 +10,11 @@
     <string name="title_activity_insulin">Insulin</string>
     <string name="title_activity_weight">Weight</string>
     <string name="title_activity_settings">Settings</string>
-
+    <string name="bg_blue">Blood Glucose Icon</string>
+    <string name="bp_green">Blood Pressure Icon</string>
+    <string name="graph_button">Graph Icon</string>
+    <string name="ins_orange">Insulin Icon</string>
+    <string name="settings_button">Settings Icon</string>
+    <string name="wt_yellow_green">Weight Icon</string>
+    
 </resources>

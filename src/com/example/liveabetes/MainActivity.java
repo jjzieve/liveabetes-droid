@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 //import android.widget.EditText;
+import android.view.Window;
 
 public class MainActivity extends Activity {
 
@@ -13,6 +14,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		/* remove top title bar cuz it's ugly */
+//		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	}
 
 	@Override
