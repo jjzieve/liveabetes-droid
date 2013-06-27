@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="bg_blue">#063346</drawable>
+    <drawable name="bp_green">#1D795D</drawable>
+    <drawable name="wt_yellow_green">#B2D739</drawable> 
+    <drawable name="ins_orange">#FA5D21</drawable>
+    
+    </resources>

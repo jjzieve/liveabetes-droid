@@ -85,7 +85,7 @@ public class WeightDatabaseHandler extends SQLiteOpenHelper {
 	public List<Entry> getAllEntries() {
 		List<Entry> entryList = new ArrayList<Entry>();
 		// Select All Query
-		String selectQuery = "SELECT  * FROM " + TABLE_ENTRIES;
+		String selectQuery = "SELECT * FROM " + TABLE_ENTRIES;
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(selectQuery, null);
