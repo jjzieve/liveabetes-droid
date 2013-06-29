@@ -5,6 +5,41 @@
     android:orientation="vertical" 
     tools:context=".MainActivity" >
     
+    <!-- begin swipe view -->
+	<android.support.v4.view.ViewPager
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:id="@+id/pager"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+  
+        <!-- This title strip will display the currently visible page title, as well as the page  
+			titles for adjacent pages. -->
+
+	<android.support.v4.view.PagerTitleStrip
+    	android:id="@+id/pager_title_strip"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_gravity="top"
+    	android:background="#33b5e5"
+    	android:paddingBottom="4dp"
+    	android:paddingTop="4dp"
+    	android:textColor="#fff" />
+  
+	</android.support.v4.view.ViewPager>
+   	<!-- end swipe view -->
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_margin="8dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerInside"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/stefan" />
+        	 
     <LinearLayout
     	android:id="@+id/progresslayout"
     	android:layout_width="fill_parent"
