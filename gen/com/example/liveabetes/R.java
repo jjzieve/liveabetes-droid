@@ -47,12 +47,12 @@ public final class R {
         public static final int wt_yellow_green=0x7f02000c;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f0b0011;
         public static final int action_settings=0x7f0b0015;
         public static final int button1=0x7f0b0006;
         public static final int button2=0x7f0b0010;
         public static final int datePicker1=0x7f0b0003;
         public static final int editText1=0x7f0b0005;
+        public static final int fragmentLeft=0x7f0b0011;
         public static final int imageButton1=0x7f0b000a;
         public static final int imageView1=0x7f0b000c;
         public static final int imageView2=0x7f0b000f;

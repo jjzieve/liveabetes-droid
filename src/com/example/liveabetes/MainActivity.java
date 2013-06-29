@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
@@ -21,7 +21,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      * derivative, which will keep every loaded fragment in memory. If this becomes too memory
      * intensive, it may be best to switch to a {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    AppSectionsPagerAdapter mAppSectionsPagerAdapter;
+    static AppSectionsPagerAdapter mAppSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will display the three primary sections of the app, one at a
@@ -56,8 +56,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	/** 
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to 
      * one of the sections/tabs/pages. 
-     */  
-    public class AppSectionsPagerAdapter extends FragmentPagerAdapter {  
+     */
+    public class AppSectionsPagerAdapter extends FragmentStatePagerAdapter {
   
         public AppSectionsPagerAdapter(FragmentManager fm) {  
             super(fm);
@@ -69,7 +69,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             // Return a DummySectionFragment (defined as a static inner class  
             // below) with the page number as its lone argument.  
         	Fragment fragment = new Fragment();
-        	Log.i(TAG, "received an exception");
+
             switch (position) {  
             case 0:  
                 return fragment = new LeftFragment();  
@@ -80,7 +80,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             default:  
                 break;  
             }
-			return fragment;  
+			return fragment;
         }
   
         @Override  

@@ -1,23 +1,30 @@
 package com.example.liveabetes;
 
-import java.util.List;
 
+import com.example.liveabetes.MainActivity.AppSectionsPagerAdapter;
+import java.util.List;
 import android.os.Bundle;
-import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TimePicker;
 import android.support.v4.app.NavUtils;
+import android.support.v4.view.ViewPager;
 import android.annotation.TargetApi;
 import android.os.Build;
 
-public class BloodGlucoseActivity extends Activity {
+public class BloodGlucoseActivity extends FragmentActivity {
 
 	private GlucoseDatabaseHandler db;
+	ViewPager mViewPager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +96,24 @@ public class BloodGlucoseActivity extends Activity {
 			// Writing Contacts to log
 			Log.d("Name: ", log);
 		}	
+		
+		// add table entry in leftFragment
+		addTableEntry(stringBloodSugar, timeCode, view);
+	}
+	
+	public void addTableEntry(String stringBloodSugar, String timeCode, View v){
+		FragmentManager fm = getSupportFragmentManager();
+		final AppSectionsPagerAdapter mAppSectionsPagerAdapter = MainActivity.mAppSectionsPagerAdapter;
+		mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mAppSectionsPagerAdapter);
+
+        ((ImageButton)findViewById(R.id.imageView1)).setOnTouchListener(new OnTouchListener() {
+        	public boolean onTouch(View v, MotionEvent event) {
+        		Log.i("Touch!", "here");
+//        		mAppSectionsPagerAdapter.notifyDataSetChanged();
+				return false;
+			}
+        });
 	}
 
 }
