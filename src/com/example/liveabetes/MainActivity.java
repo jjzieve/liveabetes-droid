@@ -117,11 +117,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	    startActivity(intent);
 	}
 	
-	/** Called when the user clicks the Graph button */
+	/** Called when the user clicks the Graph button 
 	public void graph(View view) {
 		Intent intent = new Intent(this, GraphActivity.class);
 	    startActivity(intent);
-	}
+	}*/
 	
 	/** Called when the user clicks the Insulin button */
 	public void insulin(View view) {
