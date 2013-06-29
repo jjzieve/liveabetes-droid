@@ -4,17 +4,6 @@
     android:layout_height="match_parent"
     android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
 
-    <ImageButton
-        android:id="@+id/profile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="8dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerInside"
-        android:src="@drawable/stefan" />
-
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
