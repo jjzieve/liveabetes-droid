@@ -47,8 +47,8 @@ public final class R {
         public static final int wt_yellow_green=0x7f02000c;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f0b0014;
-        public static final int action_settings=0x7f0b0019;
+        public static final int LinearLayout1=0x7f0b0013;
+        public static final int action_settings=0x7f0b0017;
         public static final int button1=0x7f0b0006;
         public static final int button2=0x7f0b0010;
         public static final int datePicker1=0x7f0b0003;
@@ -58,19 +58,17 @@ public final class R {
         public static final int imageView2=0x7f0b000f;
         public static final int imageView4=0x7f0b000d;
         public static final int imageView5=0x7f0b000e;
-        public static final int input_numbers=0x7f0b0015;
-        public static final int linearLayout1=0x7f0b0018;
+        public static final int input_numbers=0x7f0b0014;
         public static final int mySimpleXYPlot=0x7f0b0007;
         public static final int pager=0x7f0b0008;
         public static final int pager_title_strip=0x7f0b0009;
-        public static final int profile=0x7f0b0013;
         public static final int progresslayout=0x7f0b000b;
         public static final int section_label=0x7f0b0011;
         public static final int tableRow1=0x7f0b0000;
         public static final int tableRow2=0x7f0b0002;
         public static final int tableRow3=0x7f0b0004;
-        public static final int tableRow4=0x7f0b0017;
-        public static final int textView1=0x7f0b0016;
+        public static final int tableRow4=0x7f0b0016;
+        public static final int textView1=0x7f0b0015;
         public static final int timePicker1=0x7f0b0001;
         public static final int viewer=0x7f0b0012;
     }
