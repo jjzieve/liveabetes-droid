@@ -13,6 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
     /**
@@ -61,7 +62,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
   
         public AppSectionsPagerAdapter(FragmentManager fm) {  
             super(fm);
-        }  
+        }
   
         @Override  
         public Fragment getItem(int position) {  
@@ -71,18 +72,29 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         	Fragment fragment = new Fragment();
 
             switch (position) {  
-            case 0:  
-                return fragment = new LeftFragment();  
-            case 1:  
-                return fragment = new CenterFragment();  
-            case 2:  
-                return fragment = new RightFragment();  
-            default:  
-                break;  
+            case 0:
+                return fragment = new LeftFragment();
+            case 1:
+                return fragment = new CenterFragment();
+            case 2:
+                return fragment = new RightFragment();
+            default:
+                break;
             }
 			return fragment;
         }
-  
+        
+//        @Override
+//        container	The containing View from which the page will be removed.
+//        position	The page position to be removed.
+//        object	The same object that was returned by instantiateItem(View, int).
+//        public void destroyItem(ViewGroup container, int position, Object object){
+//            FragmentManager manager = ((Fragment)object).getFragmentManager();
+//            android.support.v4.app.FragmentTransaction trans = manager.beginTransaction();
+//            trans.remove((Fragment)object);
+//            trans.commit();
+//        }
+
         @Override  
         public int getCount() {  
             // Show 3 total pages
