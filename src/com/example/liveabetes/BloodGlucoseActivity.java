@@ -1,25 +1,37 @@
 package com.example.liveabetes;
 
-import java.util.List;
 
+<<<<<<< HEAD
 import com.firebase.client.Firebase;
 
+=======
+import com.example.liveabetes.MainActivity.AppSectionsPagerAdapter;
+import java.util.List;
+>>>>>>> 6ac841a9660c88d127c045d77bce995f2ba354c0
 import android.os.Bundle;
-import android.app.Activity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.support.v4.app.NavUtils;
+import android.support.v4.view.ViewPager;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 
-public class BloodGlucoseActivity extends Activity {
+public class BloodGlucoseActivity extends FragmentActivity {
 
 	private GlucoseDatabaseHandler db;
+	ViewPager mViewPager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +106,31 @@ public class BloodGlucoseActivity extends Activity {
 			// Writing Contacts to log
 			Log.d("Name: ", log);
 		}	
+		
+		// add table entry in leftFragment
+		addTableEntry(stringBloodSugar, timeCode, view);
+	}
+	
+	public void addTableEntry(String stringBloodSugar, String timeCode, View v){
+		Button button = (Button) findViewById(R.id.submit_button);
+		button.setOnTouchListener(new OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_DOWN ) {
+					MainActivity.mAppSectionsPagerAdapter.notifyDataSetChanged();
+//					Log.i("this sucks", "null");
+//					startActivity(new Intent(getBaseContext(), MainActivity.class));
+					
+					Fragment details = (Fragment)getSupportFragmentManager().findFragmentById(R.id.fragmentRight);
+					if(details == null){
+						Log.i("this is null", "null");
+					}
+					else{
+						Log.i("this sucks", "not null");
+					}
+				}
+				return false;
+			}
+        });
 	}
 
 }
