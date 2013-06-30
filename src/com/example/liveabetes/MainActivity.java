@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
@@ -73,7 +74,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             switch (position) {  
             case 0:  
                 return fragment = new LeftFragment();  
-            case 1:  
+            case 1:
                 return fragment = new CenterFragment();  
             case 2:  
                 return fragment = new RightFragment();  

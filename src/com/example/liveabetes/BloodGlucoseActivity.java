@@ -2,6 +2,8 @@ package com.example.liveabetes;
 
 import java.util.List;
 
+import com.firebase.client.Firebase;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -76,6 +78,9 @@ public class BloodGlucoseActivity extends Activity {
 		String timeCode = stringDate + ":" + stringTime;
 
 		System.out.println(stringDate + ":" + stringTime + ":" + stringBloodSugar);
+		
+		Firebase fb = new Firebase("https://eeplord.firebaseio.com/TEST");
+		fb.setValue(true);
 
 		//Local Database
 		Log.d("Insert: ", "Inserting .."); 
