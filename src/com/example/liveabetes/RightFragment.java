@@ -38,13 +38,15 @@ public class RightFragment extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		rootView = (ViewGroup) inflater.inflate(R.layout.swipeview_fragment_right, container, false);
 		rootView.setBackgroundColor(Color.WHITE);
-
-		displayGraph(rootView);
-
 		return rootView;
 	}
+	
+	public void onActivityCreated(Bundle savedInstanceState) {
+	    super.onActivityCreated(savedInstanceState);
+	    displayGraph();
+	}
 
-	public void displayGraph(ViewGroup rootView){
+	public void displayGraph(){
 
 		//create the GlucoseDatabaseHandler
 		GlucoseDatabaseHandler db = new GlucoseDatabaseHandler(this.getActivity());
@@ -60,8 +62,6 @@ public class RightFragment extends Fragment{
 
 		Log.i(TAG, "2");
 
-		System.out.println(contacts.size());
-
 		for (int i = 0; i < contacts.size(); i++) {
 			series1Numbers[i] = contacts.get(i).getID();
 			series2Numbers[i] = Integer.parseInt(contacts.get(i).getValue());
@@ -72,7 +72,7 @@ public class RightFragment extends Fragment{
 		//for (int i = 0; i < contacts.size; )
 
 		// initialize our XYPlot reference:
-		mySimpleXYPlot = (XYPlot) rootView.findViewById(R.id.mySimpleXYPlot);
+		mySimpleXYPlot = (XYPlot) getView().findViewById(R.id.mySimpleXYPlot);
 		mySimpleXYPlot.setBorderStyle(XYPlot.BorderStyle.NONE, null, null);
 	    mySimpleXYPlot.setPlotMargins(0, 0, 0, 0);
 	    mySimpleXYPlot.setPlotPadding(0, 0, 0, 0);
@@ -162,4 +162,6 @@ public class RightFragment extends Fragment{
 
 		Log.i(TAG, "10");
 	}
+	
+	
 }

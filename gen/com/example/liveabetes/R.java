@@ -51,33 +51,32 @@ public final class R {
         public static final int wt_yellow_green=0x7f02000f;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f0b0012;
-        public static final int action_settings=0x7f0b001a;
-        public static final int average_bg=0x7f0b0014;
-        public static final int bg_button=0x7f0b000d;
-        public static final int bp_button=0x7f0b0010;
+        public static final int LinearLayout1=0x7f0b0011;
+        public static final int action_settings=0x7f0b0019;
+        public static final int average_bg=0x7f0b0013;
+        public static final int bg_button=0x7f0b000c;
+        public static final int bp_button=0x7f0b000f;
         public static final int button1=0x7f0b0007;
-        public static final int button2=0x7f0b0011;
+        public static final int button2=0x7f0b0010;
         public static final int datePicker1=0x7f0b0003;
         public static final int editText1=0x7f0b0005;
-        public static final int fragmentLeft=0x7f0b0015;
-        public static final int fragmentRight=0x7f0b0019;
-        public static final int input_numbers=0x7f0b0016;
-        public static final int ins_button=0x7f0b000e;
+        public static final int fragmentLeft=0x7f0b0014;
+        public static final int fragmentRight=0x7f0b0018;
+        public static final int input_numbers=0x7f0b0015;
+        public static final int ins_button=0x7f0b000d;
         public static final int mySimpleXYPlot=0x7f0b0008;
         public static final int pager=0x7f0b0009;
-        public static final int pager_tab_strip=0x7f0b000a;
-        public static final int profile_button=0x7f0b000b;
-        public static final int progresslayout=0x7f0b000c;
+        public static final int profile_button=0x7f0b000a;
+        public static final int progresslayout=0x7f0b000b;
         public static final int submit_button=0x7f0b0006;
         public static final int tableRow1=0x7f0b0000;
         public static final int tableRow2=0x7f0b0002;
         public static final int tableRow3=0x7f0b0004;
-        public static final int tableRow4=0x7f0b0018;
-        public static final int textView1=0x7f0b0017;
+        public static final int tableRow4=0x7f0b0017;
+        public static final int textView1=0x7f0b0016;
         public static final int timePicker1=0x7f0b0001;
-        public static final int title_center=0x7f0b0013;
-        public static final int weight_button=0x7f0b000f;
+        public static final int title_center=0x7f0b0012;
+        public static final int weight_button=0x7f0b000e;
     }
     public static final class layout {
         public static final int activity_blood_glucose=0x7f030000;

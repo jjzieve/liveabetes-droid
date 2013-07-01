@@ -8,7 +8,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v4.app.Fragment;
 
 public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 
@@ -79,7 +78,8 @@ public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 		Entry entry = new Entry(Integer.parseInt(cursor.getString(0)),
 				cursor.getString(1), cursor.getString(2));
 		// return contact
-				return entry;
+		db.close();
+		return entry;
 	}
 
 	// Getting All Contacts
@@ -102,7 +102,8 @@ public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 				entryList.add(entry);
 			} while (cursor.moveToNext());
 		}
-
+		
+		db.close();
 		// return contact list
 		return entryList;
 	}
@@ -152,7 +153,7 @@ public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 
 		for (Entry cn : entries)
 			this.deleteEntry(cn);
-			// Writing Contacts to log
+			// Writing Entries to log
 	}
 
 
@@ -162,7 +163,7 @@ public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.rawQuery(countQuery, null);
 		cursor.close();
-
+		db.close();
 		// return count
 		return cursor.getCount();
 	}
