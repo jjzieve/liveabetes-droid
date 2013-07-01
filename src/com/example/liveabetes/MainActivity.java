@@ -8,16 +8,11 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-<<<<<<< HEAD
 import android.support.v4.app.FragmentPagerAdapter;
-=======
->>>>>>> 6ac841a9660c88d127c045d77bce995f2ba354c0
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
     /**
@@ -33,9 +28,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      * time.
      */
     ViewPager mViewPager;
-    
-    // debug TAGs. this is how you display error messages in logcat.
-    private static final String TAG = ":( :( :( :( :((((( fuq";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +68,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         	Fragment fragment = new Fragment();
 
             switch (position) {  
-<<<<<<< HEAD
             case 0:  
                 return fragment = new LeftFragment();  
             case 1:
@@ -85,16 +76,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 return fragment = new RightFragment();  
             default:  
                 break;  
-=======
-            case 0:
-                return fragment = new LeftFragment();
-            case 1:
-                return fragment = new CenterFragment();
-            case 2:
-                return fragment = new RightFragment();
-            default:
-                break;
->>>>>>> 6ac841a9660c88d127c045d77bce995f2ba354c0
             }
 			return fragment;
         }

@@ -1,13 +1,22 @@
 package com.example.liveabetes;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 
 import com.androidplot.series.XYSeries;
+import com.androidplot.ui.AnchorPosition;
+import com.androidplot.ui.SizeLayoutType;
+import com.androidplot.ui.SizeMetrics;
+import com.androidplot.ui.widget.Widget;
+import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.PointLabelFormatter;
 import com.androidplot.xy.SimpleXYSeries;
+import com.androidplot.xy.XLayoutStyle;
 import com.androidplot.xy.XYPlot;
+import com.androidplot.xy.XYStepMode;
+import com.androidplot.xy.YLayoutStyle;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -28,6 +37,7 @@ public class RightFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		rootView = (ViewGroup) inflater.inflate(R.layout.swipeview_fragment_right, container, false);
+		rootView.setBackgroundColor(Color.WHITE);
 
 		displayGraph(rootView);
 
@@ -63,6 +73,55 @@ public class RightFragment extends Fragment{
 
 		// initialize our XYPlot reference:
 		mySimpleXYPlot = (XYPlot) rootView.findViewById(R.id.mySimpleXYPlot);
+		mySimpleXYPlot.setBorderStyle(XYPlot.BorderStyle.NONE, null, null);
+	    mySimpleXYPlot.setPlotMargins(0, 0, 0, 0);
+	    mySimpleXYPlot.setPlotPadding(0, 0, 0, 0);
+	    mySimpleXYPlot.setGridPadding(0, 10, 5, 0);
+
+	    mySimpleXYPlot.setBackgroundColor(Color.WHITE);
+
+	    mySimpleXYPlot.position(
+	            mySimpleXYPlot.getGraphWidget(),
+	            0,
+	            XLayoutStyle.ABSOLUTE_FROM_LEFT,
+	            0,
+	            YLayoutStyle.RELATIVE_TO_CENTER,
+	            AnchorPosition.LEFT_MIDDLE);
+
+	    mySimpleXYPlot.getGraphWidget().getBackgroundPaint().setColor(Color.WHITE);
+	    mySimpleXYPlot.getGraphWidget().getGridBackgroundPaint().setColor(Color.WHITE);
+
+	    mySimpleXYPlot.getGraphWidget().getDomainLabelPaint().setColor(Color.BLACK);
+	    mySimpleXYPlot.getGraphWidget().getRangeLabelPaint().setColor(Color.BLACK);
+
+	    mySimpleXYPlot.getGraphWidget().getDomainOriginLabelPaint().setColor(Color.BLACK);
+	    mySimpleXYPlot.getGraphWidget().getDomainOriginLinePaint().setColor(Color.BLACK);
+	    mySimpleXYPlot.getGraphWidget().getRangeOriginLinePaint().setColor(Color.BLACK);
+	    
+	    
+
+	    // Domain
+	    mySimpleXYPlot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, contacts.size());     
+	    mySimpleXYPlot.setDomainValueFormat(new DecimalFormat("0"));
+	    mySimpleXYPlot.setDomainStepValue(1);
+
+	    //Range
+	    mySimpleXYPlot.setRangeBoundaries(0, 500, BoundaryMode.FIXED);
+	    mySimpleXYPlot.setRangeStepValue(10);
+	    //mySimpleXYPlot.setRangeStep(XYStepMode.SUBDIVIDE, values.length);
+	    mySimpleXYPlot.setRangeValueFormat(new DecimalFormat("0"));
+
+	    //Remove legend
+	    mySimpleXYPlot.getLayoutManager().remove(mySimpleXYPlot.getLegendWidget());
+	    mySimpleXYPlot.getLayoutManager().remove(mySimpleXYPlot.getDomainLabelWidget());
+	    mySimpleXYPlot.getLayoutManager().remove(mySimpleXYPlot.getRangeLabelWidget());
+	    mySimpleXYPlot.getLayoutManager().remove(mySimpleXYPlot.getTitleWidget());
+	    
+	    //Get rid of black borders
+	    Widget gw = mySimpleXYPlot.getGraphWidget();
+	    SizeMetrics sm = new SizeMetrics(0,SizeLayoutType.FILL, 0,SizeLayoutType.FILL);
+	    gw.setSize(sm);
+	    
 
 		Log.i(TAG, "4");
 
@@ -102,9 +161,5 @@ public class RightFragment extends Fragment{
 		mySimpleXYPlot.setTicksPerRangeLabel(3);
 
 		Log.i(TAG, "10");
-
-		// by default, AndroidPlot displays developer guides to aid in laying out your plot.
-		// To get rid of them call disableAllMarkup():
-		//mySimpleXYPlot.disableAllMarkup();//Deprecated not needed anymore
 	}
 }

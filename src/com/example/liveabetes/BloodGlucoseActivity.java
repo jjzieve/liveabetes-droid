@@ -1,17 +1,12 @@
 package com.example.liveabetes;
 
 
-<<<<<<< HEAD
-import com.firebase.client.Firebase;
 
-=======
-import com.example.liveabetes.MainActivity.AppSectionsPagerAdapter;
+import com.firebase.client.Firebase;
 import java.util.List;
->>>>>>> 6ac841a9660c88d127c045d77bce995f2ba354c0
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +20,6 @@ import android.widget.TimePicker;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.annotation.TargetApi;
-import android.content.Intent;
 import android.os.Build;
 
 public class BloodGlucoseActivity extends FragmentActivity {
