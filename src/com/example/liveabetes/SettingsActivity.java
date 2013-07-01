@@ -2,11 +2,14 @@ package com.example.liveabetes;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
+import android.graphics.Typeface;
 import android.os.Build;
 
 public class SettingsActivity extends Activity {
@@ -16,7 +19,12 @@ public class SettingsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
 		// Show the Up button in the action bar.
-		setupActionBar();
+		// setupActionBar();
+		
+		// set font for textview
+	    Typeface font = Typeface.createFromAsset(getAssets(), "fonts/thinroboto.ttf");
+	    TextView nameTV = (TextView)findViewById(R.id.name);
+	    nameTV.setTypeface(font);
 	}
 
 	/**

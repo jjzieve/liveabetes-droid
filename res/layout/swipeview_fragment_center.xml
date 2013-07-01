@@ -3,7 +3,9 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:orientation="vertical"
+    android:screenOrientation="portrait" >
 
     <TextView
         android:id="@+id/title_center"
