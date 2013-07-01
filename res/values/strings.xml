@@ -17,5 +17,8 @@
     <string name="settings_button">Settings Icon</string>
     <string name="wt_yellow_green">Weight Icon</string>
     <string name="weekly_glucose">Weekly Glucose</string>
+    <string name="title_center">Average Blood Glucose</string>
+    <string name="title_left">LeftFragment Title</string>
+    <string name="title_right">RightFragment Title</string>
     
 </resources>

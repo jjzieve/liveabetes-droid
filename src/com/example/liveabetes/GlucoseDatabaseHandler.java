@@ -8,6 +8,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v4.app.Fragment;
 
 public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 
@@ -106,7 +107,7 @@ public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 		return entryList;
 	}
 	
-	public double getAverage(int getNum){
+	public Double getAverage(int getNum){
 		double average = 0.;
 		List<Entry> entries = this.getAllEntries();
 		
