@@ -7,15 +7,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class CenterFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.swipeview_fragment_center, container, false);
-		View v = inflater.inflate(R.layout.swipeview_fragment_center, null);
-		
 		return rootView;
 	}
 	

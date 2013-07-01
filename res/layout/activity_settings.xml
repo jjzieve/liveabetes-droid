@@ -7,8 +7,27 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SettingsActivity" >
+    
+    <ImageButton
+        android:id="@+id/profile_button"
+        android:layout_margin="8dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerInside"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/stefan"/>
 
-    <Button
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/profile_button"
+        android:layout_toRightOf="@+id/profile_button"
+        android:text="@string/username"/>
+    
+	<Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,4 +36,5 @@
         android:text="Clear Data"
         android:onClick="clearData" />
 
+    
 </RelativeLayout>

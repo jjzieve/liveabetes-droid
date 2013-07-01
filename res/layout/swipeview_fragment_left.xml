@@ -3,8 +3,10 @@
     android:id="@+id/fragmentLeft"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:theme="@android:style/Theme.Light.NoTitleBar">
+    android:configChanges="keyboardHidden|orientation|screenSize"
+    android:orientation="vertical"
+    android:screenOrientation="portrait"
+    android:theme="@android:style/Theme.Light.NoTitleBar" >
 
     <TableLayout
         android:layout_width="fill_parent"

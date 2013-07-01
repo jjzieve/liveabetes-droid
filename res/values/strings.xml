@@ -20,5 +20,6 @@
     <string name="title_center">Average Blood Glucose</string>
     <string name="title_left">LeftFragment Title</string>
     <string name="title_right">RightFragment Title</string>
+    <string name="username">Sterfan Peterpson</string>
     
 </resources>

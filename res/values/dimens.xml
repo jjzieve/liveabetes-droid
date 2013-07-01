@@ -7,5 +7,7 @@
     <!-- font sizes -->
 	<dimen name="swipe_view_title_fontsize">28sp</dimen>
 	<dimen name="average_value">140sp</dimen>
-	<dimen name="table_entries">10sp</dimen>
+	<dimen name="table_entries">25sp</dimen>
+	<dimen name="username_settings">30sp</dimen>
+	<dimen name="app_name">30sp</dimen>
 </resources>

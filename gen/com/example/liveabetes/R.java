@@ -25,58 +25,71 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f070000;
         public static final int activity_vertical_margin=0x7f070001;
+        public static final int app_name=0x7f070006;
         public static final int average_value=0x7f070003;
         /**  font sizes 
          */
         public static final int swipe_view_title_fontsize=0x7f070002;
         public static final int table_entries=0x7f070004;
+        public static final int username_settings=0x7f070005;
     }
     public static final class drawable {
         public static final int android_icon=0x7f020000;
-        public static final int bg_blue=0x7f02000d;
-        public static final int bg_button=0x7f020001;
-        public static final int bp_button=0x7f020002;
-        public static final int bp_green=0x7f02000e;
-        public static final int graph=0x7f020003;
-        public static final int graph_button=0x7f020004;
-        public static final int header=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int ins_button=0x7f020007;
-        public static final int ins_orange=0x7f020010;
-        public static final int insulin_button=0x7f020008;
-        public static final int settings_button=0x7f020009;
-        public static final int stefan=0x7f02000a;
-        public static final int weight_button=0x7f02000b;
-        public static final int wt_button=0x7f02000c;
-        public static final int wt_yellow_green=0x7f02000f;
+        public static final int app_name=0x7f020001;
+        public static final int bg_blue=0x7f020011;
+        public static final int bg_button=0x7f020002;
+        public static final int bp_button=0x7f020003;
+        public static final int bp_green=0x7f020012;
+        public static final int emptybutton=0x7f020004;
+        public static final int form=0x7f020005;
+        public static final int graph_button=0x7f020006;
+        public static final int header=0x7f020007;
+        public static final int ins_button=0x7f020008;
+        public static final int ins_orange=0x7f020014;
+        public static final int insulin_button=0x7f020009;
+        public static final int login=0x7f02000a;
+        public static final int prompt_bg=0x7f02000b;
+        public static final int settings_button=0x7f02000c;
+        public static final int skip=0x7f02000d;
+        public static final int stefan=0x7f02000e;
+        public static final int weight_button=0x7f02000f;
+        public static final int wt_button=0x7f020010;
+        public static final int wt_yellow_green=0x7f020013;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f0b0012;
-        public static final int action_settings=0x7f0b001a;
-        public static final int average_bg=0x7f0b0014;
+        public static final int LinearLayout1=0x7f0b0019;
+        public static final int action_settings=0x7f0b0021;
+        public static final int appname=0x7f0b0011;
+        public static final int average_bg=0x7f0b001b;
         public static final int bg_button=0x7f0b000d;
         public static final int bp_button=0x7f0b0010;
         public static final int button1=0x7f0b0007;
-        public static final int button2=0x7f0b0011;
+        public static final int button2=0x7f0b0018;
         public static final int datePicker1=0x7f0b0003;
         public static final int editText1=0x7f0b0005;
-        public static final int fragmentLeft=0x7f0b0015;
-        public static final int fragmentRight=0x7f0b0019;
-        public static final int input_numbers=0x7f0b0016;
+        public static final int email=0x7f0b0013;
+        public static final int form=0x7f0b0012;
+        public static final int fragmentLeft=0x7f0b001c;
+        public static final int fragmentRight=0x7f0b0020;
+        public static final int input_numbers=0x7f0b001d;
         public static final int ins_button=0x7f0b000e;
+        public static final int login=0x7f0b0016;
         public static final int mySimpleXYPlot=0x7f0b0008;
+        public static final int name=0x7f0b0017;
         public static final int pager=0x7f0b0009;
         public static final int pager_tab_strip=0x7f0b000a;
         public static final int profile_button=0x7f0b000b;
         public static final int progresslayout=0x7f0b000c;
+        public static final int pw=0x7f0b0014;
+        public static final int skip=0x7f0b0015;
         public static final int submit_button=0x7f0b0006;
         public static final int tableRow1=0x7f0b0000;
         public static final int tableRow2=0x7f0b0002;
         public static final int tableRow3=0x7f0b0004;
-        public static final int tableRow4=0x7f0b0018;
-        public static final int textView1=0x7f0b0017;
+        public static final int tableRow4=0x7f0b001f;
+        public static final int textView1=0x7f0b001e;
         public static final int timePicker1=0x7f0b0001;
-        public static final int title_center=0x7f0b0013;
+        public static final int title_center=0x7f0b001a;
         public static final int weight_button=0x7f0b000f;
     }
     public static final class layout {
@@ -85,13 +98,14 @@ public final class R {
         public static final int activity_graph=0x7f030002;
         public static final int activity_insulin=0x7f030003;
         public static final int activity_main=0x7f030004;
-        public static final int activity_settings=0x7f030005;
-        public static final int activity_weight=0x7f030006;
-        public static final int bgform=0x7f030007;
-        public static final int graph=0x7f030008;
-        public static final int swipeview_fragment_center=0x7f030009;
-        public static final int swipeview_fragment_left=0x7f03000a;
-        public static final int swipeview_fragment_right=0x7f03000b;
+        public static final int activity_profile_setup=0x7f030005;
+        public static final int activity_settings=0x7f030006;
+        public static final int activity_weight=0x7f030007;
+        public static final int bgform=0x7f030008;
+        public static final int graph=0x7f030009;
+        public static final int swipeview_fragment_center=0x7f03000a;
+        public static final int swipeview_fragment_left=0x7f03000b;
+        public static final int swipeview_fragment_right=0x7f03000c;
     }
     public static final class menu {
         public static final int blood_glucose=0x7f0a0000;
@@ -123,6 +137,7 @@ public final class R {
         public static final int title_center=0x7f080010;
         public static final int title_left=0x7f080011;
         public static final int title_right=0x7f080012;
+        public static final int username=0x7f080013;
         public static final int weekly_glucose=0x7f08000f;
         public static final int wt_yellow_green=0x7f08000e;
     }
