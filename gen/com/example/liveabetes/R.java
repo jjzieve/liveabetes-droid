@@ -63,7 +63,7 @@ public final class R {
         public static final int ins_button=0x7f0b000e;
         public static final int mySimpleXYPlot=0x7f0b0008;
         public static final int pager=0x7f0b0009;
-        public static final int pager_title_strip=0x7f0b000a;
+        public static final int pager_tab_strip=0x7f0b000a;
         public static final int profile_button=0x7f0b000b;
         public static final int progresslayout=0x7f0b000c;
         public static final int submit_button=0x7f0b0006;

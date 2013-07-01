@@ -105,6 +105,25 @@ public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 		// return contact list
 		return entryList;
 	}
+	
+	public double getAverage(int getNum){
+		double average = 0.;
+		List<Entry> entries = this.getAllEntries();
+		
+		if(getNum == 0){	//get all entries and its average
+			for( int i = 0; i < entries.size(); i++ )
+				average += Integer.parseInt(this.getEntry(i).getValue());
+			average /= entries.size();
+		}
+		else if(getNum == 1){ // get the latest week's entries and its average
+			int counter = 0;  // this is in case there are less than 7 entries in the database.
+			for( int i = entries.size(); i > 0 && counter < 8; i--, counter++){
+				average += Integer.parseInt(this.getEntry(i).getValue());
+			}
+			average /= counter;
+		}
+		return average;
+	}
 
 	// Updating single contact
 	public int updateEntry(Entry entry) {
