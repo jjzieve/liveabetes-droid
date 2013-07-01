@@ -5,6 +5,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     
     <!-- font sizes -->
-	<dimen name="swipe_view_title_fontsize">20sp</dimen>
+	<dimen name="swipe_view_title_fontsize">28sp</dimen>
+	<dimen name="average_value">140sp</dimen>
 	<dimen name="table_entries">10sp</dimen>
 </resources>

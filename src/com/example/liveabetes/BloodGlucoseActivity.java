@@ -93,13 +93,13 @@ public class BloodGlucoseActivity extends FragmentActivity {
 		db.addEntry(new Entry(timeCode, stringBloodSugar));        
 
 		Log.d("Reading: ", "Reading all contacts.."); 
-		List<Entry> contacts = db.getAllEntries();       
+		List<Entry> contacts = db.getAllEntries();
 
 		for (Entry cn : contacts) {
 			String log = "Id: "+cn.getID()+", Date: " + cn.getTimecode() + ", Blood Glucose: " + cn.getValue();
 			// Writing Contacts to log
 			Log.d("Name: ", log);
-		}	
+		}
 		
 		// add table entry in leftFragment
 		addTableEntry(stringBloodSugar, timeCode, view);
