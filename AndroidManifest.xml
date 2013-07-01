@@ -29,6 +29,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.example.liveabetes.MainActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.liveabetes.ProfileSetupActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.liveabetes.MainActivity" />
+        </activity>
+        <activity
             android:name="com.example.liveabetes.BloodGlucoseActivity"
             android:label="@string/title_activity_blood_glucose"
             android:parentActivityName="com.example.liveabetes.MainActivity"
