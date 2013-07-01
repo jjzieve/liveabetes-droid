@@ -21,5 +21,6 @@
     <string name="title_left">LeftFragment Title</string>
     <string name="title_right">RightFragment Title</string>
     <string name="username">Sterfan Peterpson</string>
-    
+    <string name="bp_left_title">Blood Pressure Log</string>
+
 </resources>

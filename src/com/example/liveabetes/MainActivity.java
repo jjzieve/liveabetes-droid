@@ -28,6 +28,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      * time.
      */
     ViewPager mViewPager;
+    
+    /* 	0 is default view (blood glucose),
+     	1 is insulin
+     	2 is weight
+     	3 is blood pressure				*/
+    public static int viewHandler = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -115,12 +121,14 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	
 	/** Called when the user clicks the Blood Glucose button */
 	public void bloodGlucose(View view) {
+		viewHandler = 0;
 		Intent intent = new Intent(this, BloodGlucoseActivity.class);
 	    startActivity(intent);
 	}
 
 	/** Called when the user clicks the Blood Pressure button */
 	public void bloodPressure(View view) {
+		viewHandler = 1;
 		Intent intent = new Intent(this, BloodPressureActivity.class);
 	    startActivity(intent);
 	}
@@ -133,12 +141,14 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	
 	/** Called when the user clicks the Insulin button */
 	public void insulin(View view) {
+		viewHandler = 2;
 		Intent intent = new Intent(this, InsulinActivity.class);
 	    startActivity(intent);
 	}
 	
 	/** Called when the user clicks the Weight button */
 	public void weight(View view) {
+		viewHandler = 3;
 		Intent intent = new Intent(this, WeightActivity.class);
 	    startActivity(intent);
 	}

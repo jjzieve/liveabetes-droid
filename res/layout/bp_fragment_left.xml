@@ -8,6 +8,15 @@
     android:screenOrientation="portrait"
     android:theme="@android:style/Theme.Light.NoTitleBar" >
 
+    <TextView
+        android:id="@+id/bp_left_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="@dimen/swipe_view_title_fontsize"
+        android:text="@string/bp_left_title" />
+
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
