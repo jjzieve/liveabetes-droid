@@ -8,4 +8,14 @@
     <!-- colors -->
     <color name="safe_green">#007b4e</color>
     <color name="unsafe_red">#CE4849</color>
+    
+    <!-- palette -->
+    <color name="red_light">#D21F12</color>
+    <color name="red_dark">#BA120A</color>
+    <color name="pink_dark">#E06059</color>
+    <color name="pink_med">#E8837B</color>
+    <color name="pink_light">#EEA19A</color>
+    <color name="gray_dark">#1A1A1A</color>
+    <color name="white_off">#FDFDFD</color>
+    <color name="brown_med">#621914</color>
 </resources>

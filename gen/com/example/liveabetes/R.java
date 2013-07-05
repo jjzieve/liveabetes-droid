@@ -11,10 +11,20 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int brown_med=0x7f060009;
+        public static final int gray_dark=0x7f060007;
+        public static final int pink_dark=0x7f060004;
+        public static final int pink_light=0x7f060006;
+        public static final int pink_med=0x7f060005;
+        public static final int red_dark=0x7f060003;
+        /**  palette 
+         */
+        public static final int red_light=0x7f060002;
         /**  colors 
          */
         public static final int safe_green=0x7f060000;
         public static final int unsafe_red=0x7f060001;
+        public static final int white_off=0x7f060008;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -58,22 +68,25 @@ public final class R {
         public static final int wt_yellow_green=0x7f020014;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f0b001e;
-        public static final int action_settings=0x7f0b0022;
+        public static final int LinearLayout1=0x7f0b0021;
+        public static final int action_settings=0x7f0b0025;
+        public static final int add=0x7f0b001c;
         public static final int appname=0x7f0b0010;
-        public static final int average_bg=0x7f0b0020;
+        public static final int average_bg=0x7f0b0023;
         public static final int bg_button=0x7f0b000c;
         public static final int bp_button=0x7f0b000f;
         public static final int bp_left_title=0x7f0b001a;
         public static final int button1=0x7f0b0007;
         public static final int button2=0x7f0b0018;
         public static final int datePicker1=0x7f0b0003;
+        public static final int delete=0x7f0b001d;
         public static final int editText1=0x7f0b0005;
         public static final int email=0x7f0b0012;
         public static final int form=0x7f0b0011;
         public static final int fragmentLeft=0x7f0b0019;
-        public static final int fragmentRight=0x7f0b0021;
-        public static final int input_numbers=0x7f0b001b;
+        public static final int fragmentRight=0x7f0b0024;
+        public static final int group=0x7f0b001b;
+        public static final int input_numbers=0x7f0b001e;
         public static final int ins_button=0x7f0b000d;
         public static final int login=0x7f0b0015;
         public static final int mySimpleXYPlot=0x7f0b0008;
@@ -88,10 +101,10 @@ public final class R {
         public static final int tableRow1=0x7f0b0000;
         public static final int tableRow2=0x7f0b0002;
         public static final int tableRow3=0x7f0b0004;
-        public static final int tableRow4=0x7f0b001d;
-        public static final int textView1=0x7f0b001c;
+        public static final int tableRow4=0x7f0b0020;
+        public static final int textView1=0x7f0b001f;
         public static final int timePicker1=0x7f0b0001;
-        public static final int title_center=0x7f0b001f;
+        public static final int title_center=0x7f0b0022;
         public static final int weight_button=0x7f0b000e;
     }
     public static final class layout {

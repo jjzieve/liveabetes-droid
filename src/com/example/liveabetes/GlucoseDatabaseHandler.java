@@ -6,24 +6,24 @@ import java.util.List;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 
 	// All Static variables
+	private SQLiteDatabase db;
+	
 	// Database Version
 	private static final int DATABASE_VERSION = 1;
-
 	private static final String DATABASE_NAME = "glucoseManager";
 	
 	// Contacts table name
-	private static final String TABLE_ENTRIES = "entries";
-
-	// Contacts Table Columns names
-	private static final String KEY_ID = "id";
-	private static final String KEY_TIME = "timecode";
-	private static final String KEY_VALUE = "value";
+	public static final String TABLE_ENTRIES = "entries";
+	public static final String KEY_ID = null;
+	public static final String KEY_TIME = null;
+	public static final String KEY_VALUE = null;
 
 	public GlucoseDatabaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -51,11 +51,13 @@ public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 	/**
 	 * All CRUD(Create, Read, Update, Delete) Operations
 	 */
+	
+	public void open() throws SQLException{
+		db = this.getWritableDatabase();
+	}
 
 	// Adding new contact
-	void addEntry(Entry entry) {
-		SQLiteDatabase db = this.getWritableDatabase();
-
+	public void addEntry(Entry entry) {
 		ContentValues values = new ContentValues();
 		values.put(KEY_TIME, entry.getTimecode()); // Contact Name
 		values.put(KEY_VALUE, entry.getValue()); // Contact Phone
@@ -66,7 +68,7 @@ public class GlucoseDatabaseHandler extends SQLiteOpenHelper {
 	}
 
 	// Getting single contact
-	Entry getEntry(int id) {
+	public Entry getEntry(int id) {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor cursor = db.query(TABLE_ENTRIES, new String[] { KEY_ID,

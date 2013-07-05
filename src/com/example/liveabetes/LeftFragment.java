@@ -1,24 +1,28 @@
 package com.example.liveabetes;
 
-import android.support.v4.app.FragmentManager;
+import java.util.List;
+
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
 
-public class LeftFragment extends Fragment{
+public class LeftFragment extends ListFragment{
 	ViewGroup rootView = null;
+	SQLiteOpenHelper db;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		rootView = (ViewGroup) inflater.inflate(R.layout.bp_fragment_left, container, false);
-		
 		rootView.setBackgroundColor(Color.WHITE);
+		
+		databaseSetup();
+		
 		return rootView;
 	}
 	
@@ -28,6 +32,9 @@ public class LeftFragment extends Fragment{
 	}
 	
 	public void onResume(Bundle savedInstanceState){
+		if(MainActivity.viewHandler == 0){
+			((GlucoseDatabaseHandler) db).open();
+		}
 		super.onResume();
 /*		switch(MainActivity.viewHandler){
 		case(0):
@@ -48,5 +55,23 @@ public class LeftFragment extends Fragment{
 		default:
 			break;
 		}*/
+	}
+	
+	@Override
+	public void onPause(){
+		db.close();
+		super.onPause();
+	}
+	
+	void databaseSetup(){
+		// blood glucose database
+		if(MainActivity.viewHandler == 0){
+			db = new GlucoseDatabaseHandler(getActivity());
+			((GlucoseDatabaseHandler) db).open();
+			Log.i("databaseSetup", "it works?");
+//			List<Entry> values = ((GlucoseDatabaseHandler) db).getAllEntries();
+//			ArrayAdapter<Entry> adapter = new ArrayAdapter<Entry>(getActivity(), android.R.layout.activity_list_item, values);
+//			setListAdapter(adapter);
+		}
 	}
 }

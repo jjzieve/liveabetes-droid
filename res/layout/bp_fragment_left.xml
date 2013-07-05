@@ -14,83 +14,39 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:textSize="@dimen/swipe_view_title_fontsize"
-        android:text="@string/bp_left_title" />
+        android:text="@string/bp_left_title"
+        android:textSize="@dimen/swipe_view_title_fontsize" />
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-        <TableRow
-            android:id="@+id/input_numbers"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp">
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:padding="10dp"
-                android:background="@color/safe_green"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/table_entries"
-                android:lineSpacingMultiplier="2"
-                android:text="98" />
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="@dimen/table_entries"
-                android:gravity="center"
-                android:text="Before Breakfast" />
-
-            </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp" >
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:padding="10dp"
-                android:background="@color/unsafe_red"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/table_entries"
-                android:lineSpacingMultiplier="2"
-                android:text="252" />
-            
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="@dimen/table_entries"
-                android:gravity="center"
-                android:text="After Breakfast" />
-
-            </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
+        <LinearLayout
+            android:id="@+id/group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-        </TableRow>
 
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </TableRow>
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Add New" />
 
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </TableRow>
-    </TableLayout>
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Delete First" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hello" />
+    </LinearLayout>
 
 </LinearLayout>

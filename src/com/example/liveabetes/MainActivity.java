@@ -1,10 +1,14 @@
 package com.example.liveabetes;
 
+import java.util.List;
+
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +17,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ArrayAdapter;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
     /**
@@ -22,19 +27,14 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      * intensive, it may be best to switch to a {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     static AppSectionsPagerAdapter mAppSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will display the three primary sections of the app, one at a
-     * time.
-     */
-    ViewPager mViewPager;
+    ViewPager mViewPager; //viewpager that will display 3 primary sections
     
     /* 	0 is default view (blood glucose),
      	1 is insulin
      	2 is weight
      	3 is blood pressure				*/
     public static int viewHandler = 0;
-	
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,6 +47,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         // Set up the ViewPager with the sections adapter.  
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mAppSectionsPagerAdapter);
+
 	}
 
 	@Override
@@ -56,10 +57,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		return true;
 	}
 	
-	/** 
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to 
-     * one of the sections/tabs/pages. 
-     */
+	// returns fragment corresponding to tab
     public class AppSectionsPagerAdapter extends FragmentStatePagerAdapter {
   
         public AppSectionsPagerAdapter(FragmentManager fm) {  
@@ -86,17 +84,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 			return fragment;
         }
         
-//        @Override
-//        container	The containing View from which the page will be removed.
-//        position	The page position to be removed.
-//        object	The same object that was returned by instantiateItem(View, int).
-//        public void destroyItem(ViewGroup container, int position, Object object){
-//            FragmentManager manager = ((Fragment)object).getFragmentManager();
-//            android.support.v4.app.FragmentTransaction trans = manager.beginTransaction();
-//            trans.remove((Fragment)object);
-//            trans.commit();
-//        }
-
         @Override  
         public int getCount() {  
             // Show 3 total pages
@@ -132,12 +119,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		Intent intent = new Intent(this, BloodPressureActivity.class);
 	    startActivity(intent);
 	}
-	
-	/** Called when the user clicks the Graph button 
-	public void graph(View view) {
-		Intent intent = new Intent(this, GraphActivity.class);
-	    startActivity(intent);
-	}*/
 	
 	/** Called when the user clicks the Insulin button */
 	public void insulin(View view) {

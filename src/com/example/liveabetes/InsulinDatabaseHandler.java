@@ -52,8 +52,8 @@ public class InsulinDatabaseHandler extends SQLiteOpenHelper {
 	 * All CRUD(Create, Read, Update, Delete) Operations
 	 */
 
-	// Adding new contact
-	void addEntry(Entry entry) {
+	 // Adding new contact
+	public void addEntry(Entry entry) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -66,7 +66,7 @@ public class InsulinDatabaseHandler extends SQLiteOpenHelper {
 	}
 
 	// Getting single contact
-	Entry getEntry(int id) {
+	public Entry getEntry(int id) {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor cursor = db.query(TABLE_ENTRIES, new String[] { KEY_ID,
@@ -149,5 +149,9 @@ public class InsulinDatabaseHandler extends SQLiteOpenHelper {
 	
 	public void deleteDatabase(Context context){
 		context.deleteDatabase(DATABASE_NAME);
+	}
+
+	public Double getAverage(int getNum) {
+		return null;
 	}
 }

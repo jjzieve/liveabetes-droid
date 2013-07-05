@@ -9,7 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class PressureDatabaseHandler extends SQLiteOpenHelper {
+public class PressureDatabaseHandler extends SQLiteOpenHelper{
 
 	// All Static variables
 	// Database Version
@@ -53,7 +53,7 @@ public class PressureDatabaseHandler extends SQLiteOpenHelper {
 	 */
 
 	// Adding new contact
-	void addEntry(Entry entry) {
+	public void addEntry(Entry entry) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -66,7 +66,7 @@ public class PressureDatabaseHandler extends SQLiteOpenHelper {
 	}
 
 	// Getting single contact
-	Entry getEntry(int id) {
+	public Entry getEntry(int id) {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor cursor = db.query(TABLE_ENTRIES, new String[] { KEY_ID,
@@ -149,5 +149,9 @@ public class PressureDatabaseHandler extends SQLiteOpenHelper {
 	
 	public void deleteDatabase(Context context){
 		context.deleteDatabase(DATABASE_NAME);
+	}
+
+	public Double getAverage(int getNum) {
+		return null;
 	}
 }
